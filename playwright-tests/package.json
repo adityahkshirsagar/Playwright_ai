@@ -1,0 +1,19 @@
+{
+  "name": "playwright-tests",
+  "version": "1.0.0",
+  "description": "Playwright AI Testing Framework",
+  "scripts": {
+    "test": "playwright test && npm run archive",
+    "test:headed": "playwright test --headed && npm run archive",
+    "test:clean": "npm run clean:current && playwright test && npm run archive",
+    "test:clean:headed": "npm run clean:current && playwright test --headed && npm run archive",
+    "archive": "node -e \"const fs=require('fs'),path=require('path');const ts=new Date().toISOString().replace(/[:.]/g,'-').slice(0,-5);['test-results','playwright-report'].forEach(d=>{const s=path.join('.',d);if(fs.existsSync(s)&&fs.statSync(s).isDirectory()&&fs.readdirSync(s).length>0){const cp=(src,dest)=>{if(!fs.existsSync(dest))fs.mkdirSync(dest,{recursive:true});fs.readdirSync(src,{withFileTypes:true}).forEach(e=>{const sp=path.join(src,e.name),dp=path.join(dest,e.name);e.isDirectory()?cp(sp,dp):fs.copyFileSync(sp,dp);});};const a=path.join('.',d+'-'+ts);cp(s,a);console.log('Archived '+d);}});const MAX=5;['test-results','playwright-report'].forEach(p=>{const items=fs.readdirSync('.',{withFileTypes:true}).filter(i=>i.isDirectory()&&i.name.startsWith(p+'-')&&i.name!==p).map(i=>{const fp=path.join('.',i.name);return{name:i.name,path:fp,mtime:fs.statSync(fp).mtimeMs};}).sort((a,b)=>b.mtime-a.mtime);if(items.length>MAX)items.slice(MAX).forEach(i=>{fs.rmSync(i.path,{recursive:true,force:true});console.log('Deleted old: '+i.name);});});\"",
+    "clean": "node -e \"const fs=require('fs'),path=require('path');const MAX=5;['test-results','playwright-report'].forEach(p=>{const items=fs.readdirSync('.',{withFileTypes:true}).filter(i=>i.isDirectory()&&i.name.startsWith(p+'-')&&i.name!==p).map(i=>{const fp=path.join('.',i.name);return{name:i.name,path:fp,mtime:fs.statSync(fp).mtimeMs};}).sort((a,b)=>b.mtime-a.mtime);if(items.length>MAX)items.slice(MAX).forEach(i=>{fs.rmSync(i.path,{recursive:true,force:true});console.log('Deleted old: '+i.name);});});\"",
+    "clean:current": "node -e \"require('fs').rmSync('test-results',{recursive:true,force:true});require('fs').rmSync('playwright-report',{recursive:true,force:true});\"",
+    "clean:all": "node -e \"const fs=require('fs');['test-results','playwright-report'].forEach(d=>fs.existsSync(d)&&fs.rmSync(d,{recursive:true,force:true}));fs.readdirSync('.').filter(i=>i.startsWith('test-results-')||i.startsWith('playwright-report-')).forEach(i=>fs.rmSync(i,{recursive:true,force:true}));\"",
+    "report": "playwright show-report"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
+

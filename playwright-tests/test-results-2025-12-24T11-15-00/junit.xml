@@ -1,0 +1,185 @@
+<testsuites id="" name="" tests="5" failures="3" skipped="0" errors="0" time="75.798549">
+<testsuite name="login.spec.ts" timestamp="2025-12-24T10:24:05.732Z" hostname="chromium" tests="5" failures="3" skipped="0" time="47.873" errors="0">
+<testcase name="Login Tests › should successfully login with valid credentials" classname="login.spec.ts" time="11.756">
+<failure message="login.spec.ts:6:9 should successfully login with valid credentials" type="FAILURE">
+<![CDATA[  [chromium] › login.spec.ts:6:9 › Login Tests › should successfully login with valid credentials ──
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /.*overview\.htm/
+    Received string:  "https://parabank.parasoft.com/parabank/login.htm;jsessionid=C351DFE1322304DCB962F198CBA4532E"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        8 × unexpected value "https://parabank.parasoft.com/parabank/login.htm;jsessionid=C351DFE1322304DCB962F198CBA4532E"
+
+
+       9 |         await loginPage.login(env.credentials.username, env.credentials.password);
+      10 |         
+    > 11 |         await expect(page).toHaveURL(/.*overview\.htm/);
+         |                            ^
+      12 |         await expect(page.locator('text=Welcome John Smith')).toBeVisible();
+      13 |     });
+      14 |
+        at C:\Users\Aditya\git\Playwright_ai\playwright-tests\tests\login.spec.ts:11:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Tests-should-s-e114c-ogin-with-valid-credentials-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Tests-should-s-e114c-ogin-with-valid-credentials-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Tests-should-s-e114c-ogin-with-valid-credentials-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Tests-should-s-e114c-ogin-with-valid-credentials-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\login-Login-Tests-should-s-e114c-ogin-with-valid-credentials-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-Login-Tests-should-s-e114c-ogin-with-valid-credentials-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|login-Login-Tests-should-s-e114c-ogin-with-valid-credentials-chromium\video.webm]]
+
+[[ATTACHMENT|login-Login-Tests-should-s-e114c-ogin-with-valid-credentials-chromium\error-context.md]]
+
+[[ATTACHMENT|login-Login-Tests-should-s-e114c-ogin-with-valid-credentials-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should fail login with invalid username" classname="login.spec.ts" time="11.103">
+<failure message="login.spec.ts:15:9 should fail login with invalid username" type="FAILURE">
+<![CDATA[  [chromium] › login.spec.ts:15:9 › Login Tests › should fail login with invalid username ──────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('text=The username and password could not be verified.')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=The username and password could not be verified.')
+
+
+      20 |         await expect(page).toHaveURL(/.*login\.htm/);
+      21 |         await expect(page.locator('h1:has-text("Error!")')).toBeVisible();
+    > 22 |         await expect(page.locator('text=The username and password could not be verified.')).toBeVisible();
+         |                                                                                             ^
+      23 |     });
+      24 |
+      25 |     test('should fail login with invalid password', async ({ page }) => {
+        at C:\Users\Aditya\git\Playwright_ai\playwright-tests\tests\login.spec.ts:22:93
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Tests-should-fail-login-with-invalid-username-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Tests-should-fail-login-with-invalid-username-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Tests-should-fail-login-with-invalid-username-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Tests-should-fail-login-with-invalid-username-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\login-Login-Tests-should-fail-login-with-invalid-username-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-invalid-username-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-invalid-username-chromium\video.webm]]
+
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-invalid-username-chromium\error-context.md]]
+
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-invalid-username-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should fail login with invalid password" classname="login.spec.ts" time="13.88">
+<failure message="login.spec.ts:25:9 should fail login with invalid password" type="FAILURE">
+<![CDATA[  [chromium] › login.spec.ts:25:9 › Login Tests › should fail login with invalid password ──────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('text=The username and password could not be verified.')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=The username and password could not be verified.')
+
+
+      30 |         await expect(page).toHaveURL(/.*login\.htm/);
+      31 |         await expect(page.locator('h1:has-text("Error!")')).toBeVisible();
+    > 32 |         await expect(page.locator('text=The username and password could not be verified.')).toBeVisible();
+         |                                                                                             ^
+      33 |     });
+      34 |
+      35 |     test('should fail login with empty credentials', async ({ page }) => {
+        at C:\Users\Aditya\git\Playwright_ai\playwright-tests\tests\login.spec.ts:32:93
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Tests-should-fail-login-with-invalid-password-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Tests-should-fail-login-with-invalid-password-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Tests-should-fail-login-with-invalid-password-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Tests-should-fail-login-with-invalid-password-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\login-Login-Tests-should-fail-login-with-invalid-password-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-invalid-password-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-invalid-password-chromium\video.webm]]
+
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-invalid-password-chromium\error-context.md]]
+
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-invalid-password-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should fail login with empty credentials" classname="login.spec.ts" time="6.516">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-empty-credentials-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should display login form elements" classname="login.spec.ts" time="4.618">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-Login-Tests-should-display-login-form-elements-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

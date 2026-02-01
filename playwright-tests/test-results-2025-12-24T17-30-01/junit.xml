@@ -1,0 +1,39 @@
+<testsuites id="" name="" tests="5" failures="0" skipped="0" errors="0" time="51.824737">
+<testsuite name="login.spec.ts" timestamp="2025-12-24T17:29:07.965Z" hostname="chromium" tests="5" failures="0" skipped="0" time="45.892" errors="0">
+<testcase name="Login Tests › should successfully login with valid credentials" classname="login.spec.ts" time="10.033">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-Login-Tests-should-s-e114c-ogin-with-valid-credentials-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should fail login with invalid username" classname="login.spec.ts" time="9.94">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-invalid-username-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should fail login with invalid password" classname="login.spec.ts" time="8.408">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-invalid-password-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should fail login with empty credentials" classname="login.spec.ts" time="11.308">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-Login-Tests-should-fail-login-with-empty-credentials-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › should display login form elements" classname="login.spec.ts" time="6.203">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|login-Login-Tests-should-display-login-form-elements-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
