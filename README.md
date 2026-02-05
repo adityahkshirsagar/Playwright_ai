@@ -85,12 +85,14 @@ The Playwright hook (`hooks/testBase.ts`) captures failure context and can be wi
 
 ## Skillset Demonstrated
 
-- UI automation design with POM
-- Robust Playwright configuration and reporting
+- UI automation architecture using Page Object Model (POM)
+- Advanced Playwright configuration and artifact capture
 - Test hooks, fixtures, and environment isolation
-- Failure diagnostics (traces, screenshots, videos)
-- Agentic AI workflow design and orchestration
-- Maintainable TypeScript and Python test tooling
+- Failure diagnostics with traces, screenshots, and video
+- Agent-based AI system design and orchestration
+- LLM integration with deterministic safety rules
+- Maintainable TypeScript and Python tooling
+- CI-friendly test and reporting pipelines
 
 ## Notes
 
