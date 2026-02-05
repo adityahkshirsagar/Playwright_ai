@@ -66,11 +66,11 @@ Results are archived after each run. The latest 5 archives are retained automati
 
 ## Environment Configuration
 
-Edit:
+Create or update:
 
-- `playwright-tests/fixtures/env.ts`
+- `playwright-tests/fixtures/env.ts` (local only, not tracked)
 
-This file controls base URL and credentials for the test environment. Avoid committing any real credentials.
+This file controls the base URL and credentials for the test environment. Keep real credentials out of Git.
 
 ## Agentic Framework (AI Failure Analysis)
 
@@ -99,4 +99,4 @@ The Playwright hook (`hooks/testBase.ts`) captures failure context and can be wi
 
 ## License
 
-Unspecified. Add a license if you plan to distribute publicly.
+MIT
