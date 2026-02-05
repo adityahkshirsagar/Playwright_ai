@@ -1,11 +1,11 @@
 // Environment configuration fixtures
 
 export const env = {
-    baseUrl: 'url',
+    baseUrl: 'https://para.testar.org/parabank/index.htm',
   
     credentials: {
-      username: 'username',
-      password: 'password'
+      username: 'john',
+      password: 'demo'
     }
   };
 
