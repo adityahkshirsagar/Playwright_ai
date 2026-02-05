@@ -1,6 +1,6 @@
 # Playwright AI Testing Framework
 
-A Playwright-based UI automation framework built around Page Object Model (POM) patterns with AI-assisted failure analysis hooks. This repository is designed to showcase automation engineering skills: clean test structure, reporting, traceability, and maintainable page abstractions.
+A Playwright-based UI automation framework built around Page Object Model (POM) patterns with AI-assisted failure analysis hooks. 
 
 ## Highlights
 
@@ -8,6 +8,7 @@ A Playwright-based UI automation framework built around Page Object Model (POM) 
 - Playwright configuration with trace, video, and screenshot capture
 - HTML, JSON, and JUnit reporting
 - Failure analysis pipeline (mock AI client) for structured debugging insights
+- Agentic AI layer with a lightweight orchestrator and specialized agents
 - Clean test hooks and environment configuration
 
 ## Project Structure
@@ -18,6 +19,7 @@ A Playwright-based UI automation framework built around Page Object Model (POM) 
 - `playwright-tests/hooks/` Shared hooks and test base
 - `playwright-tests/fixtures/` Environment config
 - `playwright-tests/utils/` Utilities (AI client, payload types)
+- `ai_agents/` Agentic framework (API, orchestrator, agents)
 - `docs/` High-level docs (placeholders)
 
 ## Tech Stack
@@ -25,6 +27,7 @@ A Playwright-based UI automation framework built around Page Object Model (POM) 
 - Playwright (TypeScript)
 - Node.js
 - npm
+- Python (FastAPI-based AI agent service)
 
 ## Quick Start
 
@@ -69,9 +72,16 @@ Edit:
 
 This file controls base URL and credentials for the test environment. Avoid committing any real credentials.
 
-## AI Failure Analysis (Mock)
+## Agentic Framework (AI Failure Analysis)
 
-On failure, the framework captures a screenshot and sends a structured payload to `utils/aiClient.ts`. The client currently returns a mock response and can be wired to a real service later.
+The `ai_agents/` package provides an agentic layer for analyzing test failures:
+
+- `api.py` exposes a FastAPI endpoint for failure analysis requests
+- `orchestrator/` routes payloads to a dedicated `FailureAgent`
+- `failure_agent/` contains prompts, rules, and analysis logic
+- Additional agents (healing, insight, optimization) are scaffolded for extension
+
+The Playwright hook (`hooks/testBase.ts`) captures failure context and can be wired to this service.
 
 ## Skillset Demonstrated
 
@@ -79,7 +89,8 @@ On failure, the framework captures a screenshot and sends a structured payload t
 - Robust Playwright configuration and reporting
 - Test hooks, fixtures, and environment isolation
 - Failure diagnostics (traces, screenshots, videos)
-- Maintainable TypeScript test code
+- Agentic AI workflow design and orchestration
+- Maintainable TypeScript and Python test tooling
 
 ## Notes
 
